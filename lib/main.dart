@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:seller_helper/Screens/sign_up_screen.dart';
+import 'package:seller_helper/Screens/forgot_password_screen.dart';
 
 void main() {
   runApp(const Shoppie());
@@ -13,7 +13,7 @@ class Shoppie extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // home: const LoginScreen(),
-      home: const SignUpScreen(),
+      home: const ForgotPasswordScreen(),
     );
   }
 }
