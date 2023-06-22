@@ -11,8 +11,8 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
-    double screen_width = MediaQuery.of(context).size.width;
-    double screen_height = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
 
     return Container(
       color: AppColors.backgroundColor,
@@ -22,14 +22,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Column(
               children: [
                 Container(
-                  width: screen_width,
-                  height: screen_height * 0.3,
+                  width: screenWidth,
+                  height: screenHeight * 0.3,
                   child: Stack(
                     children: [
                       Image.asset(
                         'images/animations/quickbook_500.gif',
                         fit: BoxFit.fill,
-                        width: screen_width,
+                        width: screenWidth,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 6, left: 1),
@@ -37,8 +37,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           alignment: Alignment.topLeft,
                           child: IconButton(
                             onPressed: () {},
-                            icon: const Icon(Icons.arrow_back,
-                                color: AppColors.textClr, size: 33),
+                            icon: const Icon(
+                              Icons.arrow_back,
+                              color: AppColors.textClr,
+                              size: 33,
+                            ),
                           ),
                         ),
                       ),
@@ -47,8 +50,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 Container(
                   // color: Colors.brown,
-                  width: screen_width,
-                  height: screen_height * 0.05,
+                  width: screenWidth,
+                  height: screenHeight * 0.05,
                   margin: const EdgeInsets.only(top: 3, left: 15),
                   child: const Text(
                     "Sign Up",
@@ -64,7 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: TextFormField(
                     style: TextStyle(
                       fontSize: 16,
-                      color: AppColors.textClr,
+                      color: AppColors.border,
                     ),
                     decoration: const InputDecoration(
                       iconColor: AppColors.border,
@@ -89,7 +92,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 Container(
-                  width: screen_width * 1,
+                  width: screenWidth * 1,
                   margin: const EdgeInsets.only(left: 15, top: 15, right: 15),
                   child: TextFormField(
                     style: const TextStyle(
@@ -116,7 +119,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 Container(
-                  width: screen_width * 1,
+                  width: screenWidth * 1,
                   margin: const EdgeInsets.only(left: 15, top: 15, right: 15),
                   child: TextFormField(
                     style: const TextStyle(
@@ -143,7 +146,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 Container(
-                  width: screen_width * 1,
+                  width: screenWidth * 1,
                   margin: const EdgeInsets.only(left: 15, top: 15, right: 15),
                   child: TextFormField(
                     style: const TextStyle(
@@ -171,7 +174,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: screen_height * 0.02),
+                SizedBox(height: screenHeight * 0.02),
                 Container(
                   margin: const EdgeInsets.only(left: 50, right: 15),
                   child: RichText(
@@ -207,11 +210,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: screen_height * 0.04,
+                  height: screenHeight * 0.04,
                 ),
                 Container(
                   margin: const EdgeInsets.only(right: 15, left: 45),
-                  width: screen_width,
+                  width: screenWidth,
                   child: ElevatedButton(
                     onPressed: () {},
                     child: Text(
@@ -227,7 +230,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: screen_height * 0.06,
+                  height: screenHeight * 0.06,
                 ),
                 Center(
                   child: RichText(
