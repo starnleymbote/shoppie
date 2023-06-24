@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:seller_helper/util/app_colors.dart';
 
@@ -67,7 +68,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Container(
                   margin: const EdgeInsets.only(left: 15, top: 30, right: 15),
                   child: TextFormField(
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       color: AppColors.border,
                     ),
@@ -236,15 +237,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 Center(
                   child: RichText(
-                    text: const TextSpan(
+                    text: TextSpan(
                       text: "Joined us Before?  ",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: AppColors.textColor,
                         fontSize: 16,
                       ),
                       children: [
                         TextSpan(
                           text: "Login",
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.of(context).pop();
+                            },
                           style: TextStyle(
                               color: AppColors.textClr2, fontSize: 17),
                         ),
