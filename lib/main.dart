@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:seller_helper/Screens/auth/enter_otp_screen.dart';
+
+import 'Screens/auth/login_screen.dart';
 
 void main() {
   runApp(const Shoppie());
@@ -12,8 +13,7 @@ class Shoppie extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // home: const LoginScreen(),
-      home: const EnterOTPScreen(),
+      home: const LoginScreen(),
     );
   }
 }

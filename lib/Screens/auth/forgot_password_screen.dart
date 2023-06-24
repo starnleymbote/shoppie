@@ -29,11 +29,16 @@ class ForgotPasswordScreen extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(top: 8, left: 5),
                         child: Align(
-                          child: Icon(
-                            Icons.arrow_back,
-                            size: 28,
-                          ),
                           alignment: Alignment.topLeft,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Icon(
+                              Icons.arrow_back,
+                              size: 28,
+                            ),
+                          ),
                         ),
                       ),
                     ],

@@ -36,7 +36,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         child: Align(
                           alignment: Alignment.topLeft,
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
                             icon: const Icon(
                               Icons.arrow_back,
                               color: AppColors.textClr,

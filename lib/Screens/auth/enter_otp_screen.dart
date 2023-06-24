@@ -26,13 +26,18 @@ class EnterOTPScreen extends StatelessWidget {
                         fit: BoxFit.fill,
                         width: screenWidth,
                       ),
-                      const Padding(
+                      Padding(
                         padding: EdgeInsets.only(top: 8, left: 5),
                         child: Align(
                           alignment: Alignment.topLeft,
-                          child: Icon(
-                            Icons.arrow_back,
-                            size: 28,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Icon(
+                              Icons.arrow_back,
+                              size: 28,
+                            ),
                           ),
                         ),
                       ),

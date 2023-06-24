@@ -1,4 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:seller_helper/Screens/auth/forgot_password_screen.dart';
+import 'package:seller_helper/Screens/auth/sign_up_screen.dart';
 import 'package:seller_helper/util/app_colors.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -108,24 +111,35 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: const EdgeInsets.only(right: 15, top: 8, bottom: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: const [
-                      Text(
-                        "Forgot Password?",
-                        style: TextStyle(
-                            color: AppColors.textClr2,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400),
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ForgotPasswordScreen(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                              color: AppColors.textClr2,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400),
+                        ),
                       ),
                     ],
                   ),
                 ),
+                //Login Button
                 Container(
                   margin: const EdgeInsets.only(right: 15, left: 45),
                   width: screen_width * 1,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(10),
+                        const EdgeInsets.all(10),
                       ),
                       elevation: MaterialStateProperty.all<double>(10),
                     ),
@@ -135,7 +149,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontSize: 20,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("You are logged in"),
+                          backgroundColor: AppColors.primaryColor,
+                          showCloseIcon: true,
+                          duration: Duration(seconds: 3),
+                          elevation: 10,
+                        ),
+                      );
+                    },
                   ),
                 ),
                 const SizedBox(
@@ -150,9 +174,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+
                 const SizedBox(
                   height: 15,
                 ),
+                //Login Button using Google
                 Container(
                   margin: const EdgeInsets.only(right: 15, left: 45),
                   width: screen_width,
@@ -189,7 +215,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: screen_height * 0.105),
                 Center(
                   child: RichText(
-                    text: const TextSpan(
+                    text: TextSpan(
                       text: "New to Shoppie?  ",
                       style: TextStyle(
                         color: AppColors.textColor,
@@ -198,6 +224,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         TextSpan(
                           text: "Register",
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SignUpScreen()));
+                            },
                           style: TextStyle(color: AppColors.textClr2),
                         ),
                       ],
