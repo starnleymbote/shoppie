@@ -27,7 +27,7 @@ class EnterOTPScreen extends StatelessWidget {
                         width: screenWidth,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 8, left: 5),
+                        padding: const EdgeInsets.only(top: 8, left: 5),
                         child: Align(
                           alignment: Alignment.topLeft,
                           child: GestureDetector(
@@ -98,7 +98,37 @@ class EnterOTPScreen extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(4.0),
                         child: Container(
-                          color: Color(0xAAD8D8D8),
+                          color: const Color(0xAAD8D8D8),
+                          child: const TextField(
+                            autofocus: true,
+                            maxLength: 1,
+                            cursorHeight: 25,
+                            textAlign: TextAlign.center,
+                            decoration: InputDecoration(
+                                counterText: '',
+                                contentPadding:
+                                    EdgeInsets.symmetric(vertical: 32),
+                                border: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: AppColors.textClr,
+                                    width: 3,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: AppColors.textClr, width: 3),
+                                )),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 70,
+                      width: 50,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(4.0),
+                        child: Container(
+                          color: const Color(0xAAD8D8D8),
                           child: const TextField(
                             autofocus: true,
                             maxLength: 1,
@@ -158,37 +188,7 @@ class EnterOTPScreen extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(4.0),
                         child: Container(
-                          color: Color(0xAAD8D8D8),
-                          child: const TextField(
-                            autofocus: true,
-                            maxLength: 1,
-                            cursorHeight: 25,
-                            textAlign: TextAlign.center,
-                            decoration: InputDecoration(
-                                counterText: '',
-                                contentPadding:
-                                    EdgeInsets.symmetric(vertical: 32),
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: AppColors.textClr,
-                                    width: 3,
-                                  ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: AppColors.textClr, width: 3),
-                                )),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 70,
-                      width: 50,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(4.0),
-                        child: Container(
-                          color: Color(0xAAD8D8D8),
+                          color: const Color(0xAAD8D8D8),
                           child: const TextField(
                             autofocus: true,
                             maxLength: 1,

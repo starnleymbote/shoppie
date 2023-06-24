@@ -220,7 +220,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   width: screenWidth,
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "Sign Up",
                       style: TextStyle(fontSize: 16),
                     ),
@@ -238,7 +238,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Center(
                   child: RichText(
                     text: TextSpan(
-                      text: "Joined us Before?  ",
+                      text: "Joined us Before? ",
                       style: const TextStyle(
                         color: AppColors.textColor,
                         fontSize: 16,

@@ -26,7 +26,7 @@ class ResetPasswordScreen extends StatelessWidget {
                         fit: BoxFit.fill,
                         width: screenWidth,
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(top: 8, left: 5),
                         child: Align(
                           child: Icon(
@@ -41,7 +41,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 ),
                 Container(
                   width: screenWidth * 0.9,
-                  child: Text(
+                  child: const Text(
                     "Reset \nPassword",
                     style: TextStyle(
                       color: AppColors.textColor,
@@ -105,7 +105,7 @@ class ResetPasswordScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 55,
                 ),
                 Container(
@@ -113,7 +113,7 @@ class ResetPasswordScreen extends StatelessWidget {
                   child: ElevatedButton(
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(8),
+                        const EdgeInsets.all(8),
                       ),
                       backgroundColor: MaterialStateProperty.all(
                         Colors.blueAccent,
@@ -121,7 +121,7 @@ class ResetPasswordScreen extends StatelessWidget {
                       elevation: MaterialStateProperty.all<double>(18),
                     ),
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "Submit",
                       style: TextStyle(fontSize: 18),
                     ),

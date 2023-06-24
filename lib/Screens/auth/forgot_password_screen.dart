@@ -27,7 +27,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                         width: screenWidth,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 8, left: 5),
+                        padding: const EdgeInsets.only(top: 8, left: 5),
                         child: Align(
                           alignment: Alignment.topLeft,
                           child: GestureDetector(
@@ -98,7 +98,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 55,
                 ),
                 Container(
@@ -106,7 +106,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   child: ElevatedButton(
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(8),
+                        const EdgeInsets.all(8),
                       ),
                       backgroundColor: MaterialStateProperty.all(
                         Colors.blueAccent,
@@ -114,7 +114,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       elevation: MaterialStateProperty.all<double>(18),
                     ),
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "Submit",
                       style: TextStyle(fontSize: 18),
                     ),

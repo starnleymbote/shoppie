@@ -15,8 +15,8 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     //Screen Sizes
-    double screen_width = MediaQuery.of(context).size.width;
-    double screen_height = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
 
     return Container(
       color: AppColors.backgroundColor,
@@ -27,8 +27,8 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Container(
                   margin: const EdgeInsets.only(left: 10, right: 10),
-                  width: screen_width,
-                  height: screen_height * 0.35,
+                  width: screenWidth,
+                  height: screenHeight * 0.35,
                   child: Image.asset(
                     'images/animations/focused_woman_640.gif',
                     fit: BoxFit.cover,
@@ -36,8 +36,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Container(
                   // color: Colors.brown,
-                  width: screen_width,
-                  height: screen_height * 0.05,
+                  width: screenWidth,
+                  height: screenHeight * 0.05,
                   margin: const EdgeInsets.only(top: 3, left: 15),
                   child: const Text(
                     "Login",
@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Container(
                   margin: const EdgeInsets.only(left: 15, top: 30, right: 15),
                   child: TextFormField(
-                    style: TextStyle(fontSize: 18, color: Colors.black),
+                    style: const TextStyle(fontSize: 18, color: Colors.black),
                     decoration: const InputDecoration(
                       iconColor: AppColors.border,
                       border: UnderlineInputBorder(
@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 Container(
-                  width: screen_width * 1,
+                  width: screenWidth * 1,
                   margin: const EdgeInsets.only(left: 15, top: 15, right: 15),
                   child: TextFormField(
                     style: const TextStyle(
@@ -117,7 +117,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ForgotPasswordScreen(),
+                              builder: (context) =>
+                                  const ForgotPasswordScreen(),
                             ),
                           );
                         },
@@ -135,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 //Login Button
                 Container(
                   margin: const EdgeInsets.only(right: 15, left: 45),
-                  width: screen_width * 1,
+                  width: screenWidth * 1,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(
@@ -181,14 +182,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 //Login Button using Google
                 Container(
                   margin: const EdgeInsets.only(right: 15, left: 45),
-                  width: screen_width,
+                  width: screenWidth,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(10),
+                        const EdgeInsets.all(10),
                       ),
                       backgroundColor: MaterialStateProperty.all(
-                        Color(0xAAF2F2F2),
+                        const Color(0xAAF2F2F2),
                       ),
                       elevation: MaterialStateProperty.all<double>(8),
                     ),
@@ -212,12 +213,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {},
                   ),
                 ),
-                SizedBox(height: screen_height * 0.105),
+                SizedBox(height: screenHeight * 0.105),
                 Center(
                   child: RichText(
                     text: TextSpan(
-                      text: "New to Shoppie?  ",
-                      style: TextStyle(
+                      text: "New to Shoppie?",
+                      style: const TextStyle(
                         color: AppColors.textColor,
                         fontSize: 16,
                       ),
@@ -227,11 +228,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SignUpScreen()));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const SignUpScreen(),
+                                ),
+                              );
                             },
-                          style: TextStyle(color: AppColors.textClr2),
+                          style: const TextStyle(color: AppColors.textClr2),
                         ),
                       ],
                     ),
