@@ -217,7 +217,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Center(
                   child: RichText(
                     text: TextSpan(
-                      text: "New to Shoppie?",
+                      text: "New to Shoppie? ",
                       style: const TextStyle(
                         color: AppColors.textColor,
                         fontSize: 16,

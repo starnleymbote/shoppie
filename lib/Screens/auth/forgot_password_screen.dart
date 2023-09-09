@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seller_helper/Screens/dashboard/dashboard.dart';
 import 'package:seller_helper/util/app_colors.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
@@ -113,7 +114,10 @@ class ForgotPasswordScreen extends StatelessWidget {
                       ),
                       elevation: MaterialStateProperty.all<double>(18),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => Dashboard()));
+                    },
                     child: const Text(
                       "Submit",
                       style: TextStyle(fontSize: 18),
