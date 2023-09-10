@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:seller_helper/models/Products.dart';
+import 'package:seller_helper/util/ApiEndPoints.dart';
 
 import '../models/Album.dart';
 
@@ -18,8 +19,6 @@ class ApiService {
     }
     final List<dynamic> data = json.decode(response.body)['products'];
     return data.map((json) => Product.fromJson(json)).toList();
-    print(jsonDecode(response.body)['products']);
-    //return Product.fromJson(jsonDecode(response.body));
   }
 
   static Future<Album> fetchAlbum() async {
@@ -27,13 +26,28 @@ class ApiService {
         .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 
     if (response.statusCode == 200) {
-      // If the server did return a 200 OK response,
-      // then parse the JSON.
       return Album.fromJson(jsonDecode(response.body));
     } else {
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
       throw Exception('Failed to load album');
     }
+  }
+
+  static Future<http.Response> login(String phone, String password) async {
+    final authenticate = await http.post(
+      Uri.parse('${ApiEndPoints.baseUrl}${ApiEndPoints.login}'),
+      body: {'phone': phone, 'password': password},
+    );
+
+    // if (authenticate.statusCode > 500) {
+    //   throw Exception(authenticate);
+    // }
+    // if (authenticate.statusCode == 401) {
+    //   return authenticate.body.toString();
+    // }
+    print("data ........daaaaata");
+    print(authenticate.body);
+    print("data ........daaaaata");
+
+    return authenticate;
   }
 }

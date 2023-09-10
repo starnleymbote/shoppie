@@ -1,19 +1,27 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:seller_helper/Controller/AuthController.dart';
 import 'package:seller_helper/Screens/auth/forgot_password_screen.dart';
 import 'package:seller_helper/Screens/auth/sign_up_screen.dart';
 import 'package:seller_helper/util/app_colors.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatelessWidget {
+  LoginScreen({Key? key}) : super(key: key);
 
-  @override
-  _LoginScreenState createState() => _LoginScreenState();
-}
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
+    void onLoginButtonPressed() async {
+      final phone = phoneController.text;
+      final password = passwordController.text;
+
+      final isAuthenticated =
+          await AuthController.login(context, phone, password);
+      //final isAuthenticated = await ApiService.login(phone, password);
+    }
+
     //Screen Sizes
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
@@ -52,6 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   margin: const EdgeInsets.only(left: 15, top: 30, right: 15),
                   child: TextFormField(
                     style: const TextStyle(fontSize: 18, color: Colors.black),
+                    controller: phoneController,
                     decoration: const InputDecoration(
                       iconColor: AppColors.border,
                       border: UnderlineInputBorder(
@@ -65,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: AppColors.border,
                         ),
                       ),
-                      labelText: 'Email',
+                      labelText: 'Phone',
                       labelStyle: TextStyle(
                         color: AppColors.textColor,
                       ),
@@ -82,6 +91,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: const TextStyle(
                       fontSize: 18,
                     ),
+                    controller: passwordController,
+                    obscureText: true,
                     decoration: const InputDecoration(
                       border: UnderlineInputBorder(
                         borderSide: BorderSide(
@@ -151,15 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text("You are logged in"),
-                          backgroundColor: AppColors.primaryColor,
-                          showCloseIcon: true,
-                          duration: Duration(seconds: 3),
-                          elevation: 10,
-                        ),
-                      );
+                      onLoginButtonPressed();
                     },
                   ),
                 ),

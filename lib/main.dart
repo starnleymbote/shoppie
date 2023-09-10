@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:seller_helper/Service/api_service.dart';
 
 import 'Screens/auth/login_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const Shoppie());
 }
 
@@ -13,9 +13,8 @@ class Shoppie extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    Get.put<ApiService>(ApiService());
-    return MaterialApp(
-      home: const LoginScreen(),
+    return GetMaterialApp(
+      home: LoginScreen(),
     );
   }
 }

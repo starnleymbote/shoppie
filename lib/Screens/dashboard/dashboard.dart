@@ -14,13 +14,12 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   late Future<List<Product>> futureProducts;
   late Future<Album> futureAlbum;
+  // late Future<bool> futureAuth;
   @override
   void initState() {
     super.initState();
     futureAlbum = ApiService.fetchAlbum();
     futureProducts = ApiService.getAllProducts();
-    print(futureAlbum);
-    print(futureProducts);
   }
 
   @override
